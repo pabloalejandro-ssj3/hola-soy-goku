@@ -1,5 +1,58 @@
-basic.forever(function () {
-    basic.showString("")
-    music.playMelody("A A G G B E C5 A ", 120)
-    music.playMelody("C A E - F F C5 E ", 120)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+        basic.showIcon(IconNames.Duck)
+        basic.pause(100)
+        basic.showLeds(`
+            . # # . .
+            # # # . .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+        basic.pause(5000)
+        basic.showLeds(`
+            # # . . .
+            # # . . .
+            . # # . .
+            . . # # #
+            . . # . #
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . # . .
+            . # # . .
+            . . # . .
+            . . # # #
+            . . # . #
+            `)
+    }
+})
+input.onButtonPressed(Button.B, function () {
+    for (let index = 0; index < 4; index++) {
+        basic.showIcon(IconNames.Snake)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . . # #
+            # # . # .
+            # # # # .
+            . . . . .
+            `)
+        basic.pause(5000)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # # . .
+            . . . . .
+            . # . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+    }
 })
