@@ -1,58 +1,15 @@
-input.onButtonPressed(Button.A, function () {
-    for (let index = 0; index < 4; index++) {
-        basic.showIcon(IconNames.Duck)
-        basic.pause(100)
-        basic.showLeds(`
-            . # # . .
-            # # # . .
-            . # # # .
-            . # # # .
-            . . . . .
-            `)
-        basic.pause(5000)
-        basic.showLeds(`
-            # # . . .
-            # # . . .
-            . # # . .
-            . . # # #
-            . . # . #
-            `)
-        basic.pause(100)
-        basic.showLeds(`
-            . . # . .
-            . # # . .
-            . . # . .
-            . . # # #
-            . . # . #
-            `)
+input.onGesture(Gesture.Shake, function () {
+    basic.clearScreen()
+    Número_aleatorio = randint(0, 3)
+    if (Número_aleatorio == 2) {
+        basic.showString("SI")
+    } else if (Número_aleatorio == 1) {
+        basic.showString("NO")
+    } else {
+        basic.showString("NO SE")
     }
+    basic.showNumber(8)
 })
-input.onButtonPressed(Button.B, function () {
-    for (let index = 0; index < 4; index++) {
-        basic.showIcon(IconNames.Snake)
-        basic.pause(100)
-        basic.showLeds(`
-            . . . . .
-            . . . # #
-            # # . # .
-            # # # # .
-            . . . . .
-            `)
-        basic.pause(5000)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . # # . .
-            . . . . .
-            . # . . .
-            `)
-        basic.pause(100)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            `)
-    }
-})
+let Número_aleatorio = 0
+basic.showString("Haz una pregunta")
+basic.showNumber(8)
