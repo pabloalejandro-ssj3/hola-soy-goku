@@ -1,6 +1,36 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    if (true) {
-    	
+    if (receivedNumber == 1) {
+        if (mi_jugada == 1) {
+            basic.showString("Empate ")
+        }
+        if (mi_jugada == 2) {
+            basic.showString("Ganaste")
+        }
+        if (mi_jugada == 3) {
+            basic.showString("perdiste")
+        }
+    }
+    if (receivedNumber == 2) {
+        if (mi_jugada == 1) {
+            basic.showString("perdiste")
+        }
+        if (mi_jugada == 2) {
+            basic.showString("Empate")
+        }
+        if (mi_jugada == 3) {
+            basic.showString("Ganaste")
+        }
+    }
+    if (receivedNumber == 3) {
+        if (mi_jugada == 1) {
+            basic.showString("Ganaste")
+        }
+        if (mi_jugada == 2) {
+            basic.showString("Perdiste")
+        }
+        if (mi_jugada == 3) {
+            basic.showString("Empate")
+        }
     }
 })
 input.onButtonPressed(Button.A, function () {
