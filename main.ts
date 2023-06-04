@@ -1,44 +1,47 @@
-let tool = 0
 radio.onReceivedNumber(function (receivedNumber) {
-    let mi_jugada = 0
-    if (receivedNumber == 1) {
-        if (mi_jugada == 1) {
-            basic.showString("empate")
-        } else if (mi_jugada == 2) {
-            basic.showString("gano")
-        } else if (mi_jugada == 3) {
-            basic.showString("perder")
-        }
+    if (true) {
+    	
     }
-    if (receivedNumber == 2) {
-        if (mi_jugada == 1) {
-            basic.showString("perder")
-        } else if (mi_jugada == 3) {
-            basic.showString("ganar")
-        } else if (mi_jugada == 2) {
-            basic.showString("empate")
-        }
-    }
-    if (receivedNumber == 3) {
-        if (mi_jugada == 1) {
-            basic.showString("perder")
-        } else if (mi_jugada == 2) {
-            basic.showString("gano")
-        } else if (mi_jugada == 3) {
-            basic.showString("empate")
-        }
-    }
+})
+input.onButtonPressed(Button.A, function () {
+    mi_jugada = 1
+    radio.sendNumber(1)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        . . . . .
+        `)
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.AB, function () {
+    mi_jugada = 3
+    radio.sendNumber(3)
+    basic.showLeds(`
+        # # . . #
+        # # . # .
+        . . # . .
+        # # . # .
+        # # . . #
+        `)
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    mi_jugada = 2
+    radio.sendNumber(2)
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+    basic.clearScreen()
 })
 input.onGesture(Gesture.Shake, function () {
-    tool = randint(0, 2)
-    if (tool == 0) {
-        basic.showIcon(IconNames.SmallSquare)
-    } else if (tool == 1) {
-        basic.showIcon(IconNames.Square)
-    } else {
-        basic.showIcon(IconNames.Scissors)
-    }
+    basic.clearScreen()
+    mi_jugada = 0
 })
-basic.forever(function () {
-    radio.setGroup(97)
-})
+let mi_jugada = 0
+radio.setGroup(134)
